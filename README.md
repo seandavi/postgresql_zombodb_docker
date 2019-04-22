@@ -9,7 +9,9 @@ extension that combines Elasticsearch with Postgresql.
 git clone https://github.com/seandavi/postgresql_zombodb_docker.git
 cd postgresql_zombodb_docker
 docker build -t pg_zombodb .
-docker run -ti -p 5433:5432 -d pg_zombodb
+# create a docker volume to persist data
+docker volume create pgdata
+docker run -p 5434:5432 -v pgdata:/var/lib/postgresql/data -d pg_zombodb
 ```
 
 Assuming that `psql` is installed on your local machine and that 
@@ -18,8 +20,9 @@ connect to the running docker instance:
 
 ```
 # now, connect to running database
-psql -h localhost -U postgres -p 5433
+psql -h localhost -U postgres -p 5434
 ```
+
 
 ## Building
 
