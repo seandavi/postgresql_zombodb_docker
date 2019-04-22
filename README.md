@@ -86,3 +86,10 @@ docker run -p 5433:5432 -it -e POSTGRES_PASSWORD=my_password -d postgres:11.2
 - [Type mapping](https://github.com/zombodb/zombodb/blob/master/TYPE-MAPPING.md)
   - varchar => keyword
   - text => text
+
+# quay.io
+
+```
+docker tag pg_zombodb quay.io/seandavi/postgres_zombodb
+docker push quay.io/seandavi/postgres_zombodb
+```
