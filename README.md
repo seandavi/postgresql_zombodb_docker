@@ -1,6 +1,8 @@
 # PostgreSQL with ZomboDB extension
 
-[zombodb](https://github.com/zombodb/zombodb) is a Postgresql
+This repo contains a simple Dockerfile that builds a PostgreSQL
+server with the ZomboDB extension. [zombodb](https://github.com/zombodb/zombodb) 
+is a Postgresql
 extension that combines Elasticsearch with Postgresql to enable
 full text indexing, search, and aggregation from postgresql based 
 on all the elasticsearch goodies.
