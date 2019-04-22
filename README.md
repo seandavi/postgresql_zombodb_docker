@@ -3,6 +3,17 @@
 [zombodb](https://github.com/zombodb/zombodb) is a Postgresql
 extension that combines Elasticsearch with Postgresql.
 
+# Quickstart
+
+```
+git clone https://github.com/seandavi/postgresql_zombodb_docker.git
+cd postgresql_zombodb_docker
+docker build -t pg_zombodb .
+docker run -ti -p 5433:5432 -d pg_zombodb
+# now, connect to running database
+psql -h localhost -U postgres -p 5433
+```
+
 ## Building
 
 To match postgres 11 with zombodb, one must currently (April 22, 2019)
