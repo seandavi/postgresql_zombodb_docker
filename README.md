@@ -10,6 +10,13 @@ git clone https://github.com/seandavi/postgresql_zombodb_docker.git
 cd postgresql_zombodb_docker
 docker build -t pg_zombodb .
 docker run -ti -p 5433:5432 -d pg_zombodb
+```
+
+Assuming that `psql` is installed on your local machine and that 
+docker is running locally (not `docker-machine`, for example),
+connect to the running docker instance:
+
+```
 # now, connect to running database
 psql -h localhost -U postgres -p 5433
 ```
