@@ -1,7 +1,21 @@
 # PostgreSQL with ZomboDB extension
 
 [zombodb](https://github.com/zombodb/zombodb) is a Postgresql
-extension that combines Elasticsearch with Postgresql.
+extension that combines Elasticsearch with Postgresql to enable
+full text indexing, search, and aggregation from postgresql based 
+on all the elasticsearch goodies.
+
+```
+# in psql
+create index abc_zombodb_index 
+  on abc using zombodb((abc.*))
+  with (url='https://user:password@host:9243/');
+# insert some data
+...
+# and query
+select * from abc where abc ==> '(brown AND fox) OR (cat AND black)';
+```
+
 
 # Quickstart
 
